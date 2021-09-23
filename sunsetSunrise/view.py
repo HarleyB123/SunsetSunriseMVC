@@ -1,13 +1,16 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
 from controller import Controller
+import os
+
+title = os.getenv("SUNRISE_SUNSET_TITLE", "Sunrise/Sunset")
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
 def index():
-   return render_template('index.html')
+   return render_template('index.html', title=title)
 
 @app.route('/report', methods=['POST', 'GET'])
 def ezw():
