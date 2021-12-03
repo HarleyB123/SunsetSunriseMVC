@@ -2,3 +2,4 @@ geopy==1.21.0
 Flask==1.1.1
 requests==2.22.0
 Flask_Cors==3.0.9
+urllib3>=1.26.5 # not directly required, pinned by Snyk to avoid a vulnerability
